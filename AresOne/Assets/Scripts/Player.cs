@@ -4,46 +4,40 @@ using System.Collections;
 public class Player : MovingObject {
 
     Animator animator;
+    private float speed = 4f;
+    private float vertSpeed = 5f;
 
-	void Update () {
+    void Update () {
 
         animator = GetComponent<Animator>();
 
-        int xAxis = 0;
+        /* int xAxis = 0;
         int yAxis = 0;
-        bool attack = false;
 
         xAxis = (int) Input.GetAxisRaw("Horizontal");
+        Debug.Log("xAxis" + xAxis);
         yAxis = (int) Input.GetAxisRaw("Vertical");
-        attack = Input.GetKeyDown("z");
-
-        animator.SetBool("playerAttack", attack);
-
-        if (xAxis != 0)
-        {
-            yAxis = 0;
-        }
+        Debug.Log("yAxis" + yAxis);
 
         if (xAxis != 0 || yAxis != 0)
         {
             CanObjectMove(xAxis, yAxis);
+        }*/
+        animator.SetBool("isRunning", false);
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(-Vector2.right * speed * Time.deltaTime);
+            animator.SetBool("isRunning", true);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            animator.SetBool("isRunning", true);
         }
 
-        if (yAxis > 0)
-        {
-            animator.SetBool("moveNorth", true);
-        }
-        else if (yAxis < 0)
-        {
-            animator.SetBool("moveSouth", true);
-        }
-        else if (xAxis < 0)
-        {
-            animator.SetBool("moveWest", true);
-        }
-        else if (xAxis > 0)
-        {
-            animator.SetBool("moveEast", true);
+        if(Input.GetKey(KeyCode.UpArrow)) {
+            transform.Translate(Vector2.up * vertSpeed * Time.deltaTime);
         }
     }
 }
