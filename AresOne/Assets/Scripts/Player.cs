@@ -40,14 +40,14 @@ public class Player : MovingObject {
         else if (objectPlayerCollidedWith.tag == "Exit")
         {
             Debug.Log("Hit Exit");
-            //Invoke("LoadNewLevel", secondUntilLevelLoads);
+            Invoke("LoadNewLevel", secondUntilLevelLoads);
         }
     }
 
-    //private void LoadNewLevel()
-    //{
-    //    Application.LoadLevel(Application.loadedLevel + 1);
-    //}
+    private void LoadNewLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel + 1);
+    }
 
     private void onDeath()
     {
