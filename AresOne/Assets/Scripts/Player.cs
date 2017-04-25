@@ -8,6 +8,8 @@ public class Player : MovingObject {
     private float vertSpeed = 5f;
     private int secondUntilLevelLoads;
 
+    public AudioClip deathSound;
+
     void Update () {
 
         animator = GetComponent<Animator>();
@@ -35,6 +37,7 @@ public class Player : MovingObject {
         if (objectPlayerCollidedWith.tag == "Spike")
         {
             Debug.Log("Hit Spike");
+            SoundController.Instance.PlaySingle(deathSound);
             Invoke("onDeath", secondUntilLevelLoads);
         }
         else if (objectPlayerCollidedWith.tag == "Exit")
