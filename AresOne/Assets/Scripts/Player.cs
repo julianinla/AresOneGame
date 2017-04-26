@@ -9,6 +9,7 @@ public class Player : MovingObject {
     private int secondUntilLevelLoads;
 
     public AudioClip deathSound;
+    public AudioClip exitSound;
 
     void Update () {
 
@@ -43,6 +44,7 @@ public class Player : MovingObject {
         else if (objectPlayerCollidedWith.tag == "Exit")
         {
             Debug.Log("Hit Exit");
+            SoundController.Instance.PlaySingle(exitSound);
             Invoke("LoadNewLevel", secondUntilLevelLoads);
         }
     }
