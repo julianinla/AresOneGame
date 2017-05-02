@@ -19,13 +19,15 @@ public class Player : MovingObject {
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(-Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
             animator.SetBool("isRunning", true);
+            FlipLeft();
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             animator.SetBool("isRunning", true);
+            FlipRight();
         }
 
         if(Input.GetKey(KeyCode.UpArrow)) {
@@ -57,5 +59,15 @@ public class Player : MovingObject {
     private void onDeath()
     {
         Application.LoadLevel(0);
+    }
+
+    void FlipLeft()
+    {
+        transform.localRotation = Quaternion.Euler(0, 180, 0); 
+    }
+
+    void FlipRight()
+    {
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 }
