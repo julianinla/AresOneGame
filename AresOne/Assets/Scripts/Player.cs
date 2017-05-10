@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Player : MovingObject {
 
@@ -10,8 +11,11 @@ public class Player : MovingObject {
 
     public AudioClip deathSound;
     public AudioClip exitSound;
+    public Text levelText;
+    public int level = Application.loadedLevel;
 
     void Update () {
+        levelText.text = "Level " + (Application.loadedLevel + 1);
 
         animator = GetComponent<Animator>();
 
