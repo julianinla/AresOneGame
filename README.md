@@ -7,15 +7,15 @@ My project, Ares One, was intended to be a 2D rogue-like game, programmed in Uni
 I utilized the Unity framework and programmed the scripts in C# in the development of this game. The music, sound effects, and sprites found in the current iteration of the game were taken from websites providing royalty-free resources.
 I began developing the game utilizing the knowledge I already had of developing games in the App Academy. The biggest issue I encountered with my project was the realization that my goals for the game were too ambitious and, as a result, I was not going to complete a good game by the end of the year. 
 Initially, the game was a rogue-like game, as planned, that looked like this:
-![](https://github.com/julianinla/AresOneGame/blob/master/ProjectPic6.png)
+![](https://github.com/julianinla/AresOneGame/blob/master/ProjectPic4.png)
 
 I re-envisioned the game I was trying to make, trying to incorporate old elements while changing the game into something I new I could get done and make enjoyable. 
 This is what I transitioned to:
-![](https://github.com/julianinla/AresOneGame/blob/master/ProjectPic6.png)
+![](https://github.com/julianinla/AresOneGame/blob/master/ProjectPic5.png)
 
 ## Final Project
 My game at the moment is a 2D platformer with a clean, simplistic look but sufficiently enjoyable mechanics. The game has a start screen, loads new levels when the player gets to the end of one, and restarts the game if the player dies.
-http://youtu.be/Ta_S9TE-iug?hd=1
+Link to Demo: http://youtu.be/Ta_S9TE-iug?hd=1
 
 ## Future Work
 I was unable to finish the pause function, which would have allowed players to pause the game if necessary.
