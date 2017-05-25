@@ -15,7 +15,7 @@ This is what I transitioned to:
 
 ## Final Project
 My game at the moment is a 2D platformer with a clean, simplistic look but sufficiently enjoyable mechanics. The game has a start screen, loads new levels when the player gets to the end of one, and restarts the game if the player dies.
-![](http://youtu.be/Ta_S9TE-iug?hd=1)
+http://youtu.be/Ta_S9TE-iug?hd=1
 
 ## Future Work
 I was unable to finish the pause function, which would have allowed players to pause the game if necessary.
