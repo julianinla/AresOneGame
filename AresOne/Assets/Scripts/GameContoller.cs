@@ -9,6 +9,8 @@ public class GameContoller : MonoBehaviour {
 
     private GameObject levelImage;
     private Text mainText;
+    private GameObject endScreen;
+    private Text endText;
     private Text startText;
     private Text text;
     private bool settingUpGame;
@@ -36,20 +38,15 @@ public class GameContoller : MonoBehaviour {
         levelImage.SetActive(false);
     }
 
-    /*private void InitializeGame()
-    {
-        levelImage = GameObject.Find("Level Image");
-        mainText = GameObject.Find("Main Text").GetComponent<Text>();
-        startText = GameObject.Find("Start Text").GetComponent<Text>();
-        levelImage.SetActive(true);
-    }*/
-
     private void InitializeGame()
     {
         settingUpGame = true;
         levelImage = GameObject.Find("Level Image");
         mainText = GameObject.Find("Main Text").GetComponent<Text>();
         startText = GameObject.Find("Start Text").GetComponent<Text>();
+        endScreen = GameObject.Find("End Screen");
+        //endText = GameObject.Find("End Text").GetComponent<Text>();
+        //endScreen.SetActive(false);
         levelImage.SetActive(true);
         if (!firstLevel)
         {
@@ -74,6 +71,11 @@ public class GameContoller : MonoBehaviour {
         if (Input.GetKeyDown("space"))
         {
             spaceClicked = true;
+        }
+        if (!firstLevel && Application.loadedLevel == 0)
+        {
+            levelImage.SetActive(false);
+            firstLevel = false;
         }
         return;
     }

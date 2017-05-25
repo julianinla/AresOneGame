@@ -8,6 +8,8 @@ public class Player : MovingObject {
     private float speed = 4f;
     private float vertSpeed = 5f;
     private int secondUntilLevelLoads;
+    private GameObject endScreen;
+    private Text endText;
 
     public AudioClip deathSound;
     public AudioClip exitSound;
@@ -49,7 +51,7 @@ public class Player : MovingObject {
         }
         else if (objectPlayerCollidedWith.tag == "Exit")
         {
-            Debug.Log("Hit Exit");
+            Debug.Log("LevelLeft" + Application.loadedLevel);
             SoundController.Instance.PlaySingle(exitSound);
             Invoke("LoadNewLevel", secondUntilLevelLoads);
         }
@@ -62,7 +64,15 @@ public class Player : MovingObject {
 
     private void onDeath()
     {
-        Application.LoadLevel(0);
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    private void EndGame()
+    {
+        //Application.LoadLevel(0);
+        //endScreen = GameObject.Find("End Screen");
+        //endText = GameObject.Find("End Text").GetComponent<Text>();
+        //endScreen.SetActive(true);
     }
 
     void FlipLeft()
